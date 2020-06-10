@@ -36,5 +36,9 @@
   :config
   (set-frame-font "FuraCode Nerd Font 13"))
 
+(use-package "startup"
+  :custom
+  (inhibit-startup-screen t "disable startup screen"))
+
 (provide 'init)
 ;; init.el ends here
