@@ -28,6 +28,9 @@
 ;; Always load newest byte code.
 (setq load-prefer-newer t)
 
+;; Disable ring bell.
+(setq ring-bell-function 'ignore)
+
 ;; setup use-package
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
