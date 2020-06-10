@@ -68,7 +68,9 @@
 (require 'use-package)
 (setq use-package-verbose t)
 
-
+(use-package autorevert
+  :config
+  (global-auto-revert-mode t))
 
 (use-package delsel
   :config
