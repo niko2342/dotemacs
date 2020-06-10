@@ -25,6 +25,9 @@
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))
 
+;; Always load newest byte code.
+(setq load-prefer-newer t)
+
 ;; setup use-package
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
