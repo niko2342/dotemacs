@@ -68,6 +68,8 @@
 (require 'use-package)
 (setq use-package-verbose t)
 
+
+
 (use-package delsel
   :config
   ;; Delete selections with a keypress.
@@ -75,7 +77,10 @@
 
 (use-package files
   :custom
-  (require-final-newline t "add newline at end of file"))
+  (require-final-newline t "add newline at end of file")
+  ;; store all backup and autosave files in the tmp dir
+  (auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
+  (backup-directory-alist `((".*" . ,temporary-file-directory))))
 
 (use-package frame
   :config
