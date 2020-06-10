@@ -17,6 +17,10 @@
 (unless package-archive-contents
   (package-refresh-contents))
 
+;; Disable menu-bar-mode
+(when (fboundp 'menu-bar-mode)
+  (menu-bar-mode -1))
+
 ;; setup use-package
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
