@@ -37,12 +37,15 @@
       scroll-preserve-screen-position 1)
 
 
+
 (use-package simple
   :config
   ;; Display line number in mode line.
   (line-number-mode t)
   ;; Display column number in mode line.
-  (column-number-mode t))
+  (column-number-mode t)
+  ;; Display buffer size in mode line.
+  (size-indication-mode t))
 
 ;; setup use-package
 (unless (package-installed-p 'use-package)
