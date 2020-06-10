@@ -36,16 +36,8 @@
       scroll-conservatively 100000
       scroll-preserve-screen-position 1)
 
-
-
-(use-package simple
-  :config
-  ;; Display line number in mode line.
-  (line-number-mode t)
-  ;; Display column number in mode line.
-  (column-number-mode t)
-  ;; Display buffer size in mode line.
-  (size-indication-mode t))
+;; Enable y/n anwsers.
+(fset 'yes-or-no-p 'y-or-n-p)
 
 ;; setup use-package
 (unless (package-installed-p 'use-package)
@@ -74,6 +66,15 @@
   (set-frame-font "FuraCode Nerd Font 13")
   ;; Disable blinking cursor.
   (blink-cursor-mode -1))
+
+(use-package simple
+  :config
+  ;; Display line number in mode line.
+  (line-number-mode t)
+  ;; Display column number in mode line.
+  (column-number-mode t)
+  ;; Display buffer size in mode line.
+  (size-indication-mode t))
 
 (use-package "startup"
   :custom
