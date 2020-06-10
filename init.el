@@ -52,7 +52,9 @@
 
 (use-package frame
   :config
-  (set-frame-font "FuraCode Nerd Font 13"))
+  (set-frame-font "FuraCode Nerd Font 13")
+  ;; Disable blinking cursor.
+  (blink-cursor-mode -1))
 
 (use-package "startup"
   :custom
