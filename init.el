@@ -32,6 +32,21 @@
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 
+;; Speed up Emacs startup time by reducing the frequency of garbage
+;; collection; run garbage collection each 50MB of data. Default
+;; values are restored after initialization.
+(let ((gc-cons-percentage-old gc-cons-percentage)
+      (gc-cons-threshold-old gc-cons-threshold))
+
+  (setq gc-cons-threshold (* 50 1024 1024)
+	gc-cons-percentage 0.1)
+
+  (add-hook 'after-init-hook
+	    `(lambda ()
+	       (setq gc-cons-percentage ,gc-cons-percentage-old
+		     gc-cons-threshold ,gc-cons-threshold-old)
+	       (garbage-collect)) t))
+
 (require 'use-package)
 (setq use-package-verbose t)
 
