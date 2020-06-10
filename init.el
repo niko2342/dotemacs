@@ -31,6 +31,11 @@
 ;; Disable ring bell.
 (setq ring-bell-function 'ignore)
 
+;; Improve scrolling.
+(setq scroll-margin 0
+      scroll-conservatively 100000
+      scroll-preserve-screen-position 1)
+
 ;; setup use-package
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
