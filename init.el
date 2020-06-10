@@ -28,5 +28,9 @@
 (require 'use-package)
 (setq use-package-verbose t)
 
+(use-package frame
+  :config
+  (set-frame-font "FuraCode Nerd Font 13"))
+
 (provide 'init)
 ;; init.el ends here
