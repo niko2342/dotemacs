@@ -21,6 +21,10 @@
 (when (fboundp 'menu-bar-mode)
   (menu-bar-mode -1))
 
+;; Disable toolbar
+(when (fboundp 'tool-bar-mode)
+  (tool-bar-mode -1))
+
 ;; setup use-package
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
