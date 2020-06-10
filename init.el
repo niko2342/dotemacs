@@ -68,6 +68,11 @@
 (require 'use-package)
 (setq use-package-verbose t)
 
+(use-package delsel
+  :config
+  ;; Delete selections with a keypress.
+  (delete-selection-mode t))
+
 (use-package files
   :custom
   (require-final-newline t "add newline at end of file"))
