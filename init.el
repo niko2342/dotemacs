@@ -36,10 +36,13 @@
       scroll-conservatively 100000
       scroll-preserve-screen-position 1)
 
+
 (use-package simple
   :config
   ;; Display line number in mode line.
-  (line-number-mode t))
+  (line-number-mode t)
+  ;; Display column number in mode line.
+  (column-number-mode t))
 
 ;; setup use-package
 (unless (package-installed-p 'use-package)
