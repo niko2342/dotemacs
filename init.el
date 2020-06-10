@@ -39,6 +39,9 @@
 ;; Enable y/n anwsers.
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;; Wrap lines at 80 characters.
+(setq-default fill-column 80)
+
 ;; Use spaces instead of tabs.
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 8)
