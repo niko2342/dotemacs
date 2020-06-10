@@ -39,6 +39,10 @@
 ;; Enable y/n anwsers.
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;; Use spaces instead of tabs.
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 8)
+
 ;; setup use-package
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
