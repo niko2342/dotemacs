@@ -65,6 +65,10 @@
 (require 'use-package)
 (setq use-package-verbose t)
 
+(use-package files
+  :custom
+  (require-final-newline t "add newline at end of file"))
+
 (use-package frame
   :config
   (set-frame-font "FuraCode Nerd Font 13")
