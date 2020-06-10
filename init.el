@@ -72,6 +72,13 @@
   :config
   (global-auto-revert-mode t))
 
+(use-package mule
+  :config
+  (prefer-coding-system 'utf-8)
+  (set-default-coding-systems 'utf-8)
+  (set-terminal-coding-system 'utf-8)
+  (set-keyboard-coding-system 'utf-8))
+
 (use-package delsel
   :config
   ;; Delete selections with a keypress.
