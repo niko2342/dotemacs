@@ -115,6 +115,15 @@
 (use-package ibuffer
   :bind (("C-x C-b" . ibuffer)))
 
+(use-package magit
+  :ensure t
+  :bind (("C-x g" . magit-status))
+  :config
+  (when (fboundp 'magit-display-buffer-fullframe-status-v1)
+    (setq magit-display-buffer-function
+          #'magit-display-buffer-fullframe-status-v1))
+  (setq transient-default-level 5))
+
 (use-package mule
   :config
   (prefer-coding-system 'utf-8)
