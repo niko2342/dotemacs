@@ -83,6 +83,19 @@
          ("C-." . avy-goto-word-or-subword-1)
          ("C-," . avy-goto-char)))
 
+(use-package company
+  :ensure t
+  :defer 5
+  :diminish company-mode
+  :hook (after-init . global-company-mode)
+  :custom
+  (company-tooltip-align-annotations t)
+  (company-idle-delay 0.3)
+  (company-minimum-prefix-length 1)
+  (company-show-numbers t)
+  (company-tooltip-flip-when-above)
+  (company-tooltip-limit 10))
+
 (use-package delsel
   :config
   ;; Delete selections with a keypress.
