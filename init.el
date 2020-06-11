@@ -115,6 +115,12 @@
   (set-terminal-coding-system 'utf-8)
   (set-keyboard-coding-system 'utf-8))
 
+(use-package saveplace
+  :custom
+  (save-place-file (expand-file-name "saveplace" user-emacs-directory))
+  :config
+  (save-place-mode t))
+
 (use-package simple
   :config
   ;; Display line number in mode line.
