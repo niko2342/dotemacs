@@ -121,6 +121,15 @@
   :config
   (save-place-mode t))
 
+(use-package savehist
+  ;; Save minibuffer history.
+  :custom
+  (savehist-file (expand-file-name "savehist" user-emacs-directory))
+  (savehist-additional-variables '(search-ring regexp-search-ring))
+  (savehist-autosave-interval 60)
+  :config
+  (savehist-mode +1))
+
 (use-package simple
   :config
   ;; Display line number in mode line.
