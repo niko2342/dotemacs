@@ -115,6 +115,15 @@
   (set-terminal-coding-system 'utf-8)
   (set-keyboard-coding-system 'utf-8))
 
+(use-package recentf
+  :custom
+  (recentf-save-file (expand-file-name "recentf" user-emacs-directory))
+  (recentf-auto-cleanup 'never)
+  (recentf-max-saved-items 500)
+  (recentf-max-menu-items 15)
+  :config
+  (recentf-mode +1))
+
 (use-package saveplace
   :custom
   (save-place-file (expand-file-name "saveplace" user-emacs-directory))
