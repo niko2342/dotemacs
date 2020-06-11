@@ -135,6 +135,16 @@
 (use-package ibuffer
   :bind (("C-x C-b" . ibuffer)))
 
+(use-package ivy
+  :ensure t
+  :diminish
+  :bind (([remap switch-to-buffer] . ivy-switch-buffer)
+	 ("C-c C-r" . ivy-resume))
+  :custom
+  (ivy-use-virtual-buffers t)
+  :config
+  (ivy-mode 1))
+
 (use-package magit
   :ensure t
   :bind (("C-x g" . magit-status))
