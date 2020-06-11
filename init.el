@@ -96,6 +96,14 @@
   (company-tooltip-flip-when-above)
   (company-tooltip-limit 10))
 
+(use-package counsel
+  :ensure t
+  :bind (([remap execute-extended-command] . counsel-M-x)
+	 ([remap find-file] . counsel-find-file)
+	 ([remap yank-pop] . counsel-yank-pop)
+	 ([remap describe-function] . counsel-describe-function)
+	 ([remap describe-variable] . counsel-describe-variable)))
+
 (use-package delsel
   :config
   ;; Delete selections with a keypress.
