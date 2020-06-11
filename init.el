@@ -161,6 +161,16 @@
   (set-terminal-coding-system 'utf-8)
   (set-keyboard-coding-system 'utf-8))
 
+(use-package projectile
+  :ensure t
+  :diminish
+  :bind-keymap ("C-c p" . projectile-command-map)
+  :config
+  (setq projectile-project-search-path '("~/projects/" "~/work/")
+	projectile-sort-order 'recentf
+	projectile-completion-system 'ivy)
+  (projectile-mode 1))
+
 (use-package recentf
   :custom
   (recentf-save-file (expand-file-name "recentf" user-emacs-directory))
