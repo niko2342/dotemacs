@@ -17,13 +17,17 @@
 (unless package-archive-contents
   (package-refresh-contents))
 
-;; Disable menu-bar-mode
+;; Disable menu-bar-mode.
 (when (fboundp 'menu-bar-mode)
   (menu-bar-mode -1))
 
-;; Disable toolbar
+;; Disable toolbar.
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))
+
+;; Disable scrollbar.
+(when (fboundp 'scroll-bar-mode)
+  (scroll-bar-mode -1))
 
 ;; Always load newest byte code.
 (setq load-prefer-newer t)
