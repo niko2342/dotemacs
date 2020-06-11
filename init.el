@@ -104,6 +104,10 @@
 	 ([remap describe-function] . counsel-describe-function)
 	 ([remap describe-variable] . counsel-describe-variable)))
 
+(use-package counsel-projectile
+  :ensure t
+  :after projectile)
+
 (use-package delsel
   :config
   ;; Delete selections with a keypress.
