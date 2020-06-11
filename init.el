@@ -101,6 +101,9 @@
   ;; Delete selections with a keypress.
   (delete-selection-mode t))
 
+(use-package diminish
+  :ensure t)
+
 (use-package files
   :custom
   (require-final-newline t "add newline at end of file")
