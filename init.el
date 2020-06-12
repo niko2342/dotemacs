@@ -191,6 +191,13 @@
 	projectile-completion-system 'ivy)
   (projectile-mode 1))
 
+(use-package python-black
+  :ensure t
+  :demand t
+  :diminish python-black-on-save-mode
+  :after python
+  :hook (python-mode . python-black-on-save-mode))
+
 (use-package py-isort
   :ensure t
   :defer
