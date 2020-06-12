@@ -76,6 +76,10 @@
   :config
   (global-auto-revert-mode t))
 
+(use-package auto-virtualenv
+  :ensure t
+  :hook (python-mode . auto-virtualenv-set-virtualenv))
+
 (use-package avy
   :ensure t
   :bind (("M-g w" . avy-goto-word-1)
