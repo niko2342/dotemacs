@@ -191,6 +191,11 @@
 	projectile-completion-system 'ivy)
   (projectile-mode 1))
 
+(use-package py-isort
+  :ensure t
+  :defer
+  :hook (before-save . py-isort-before-save))
+
 (use-package recentf
   :custom
   (recentf-save-file (expand-file-name "recentf" user-emacs-directory))
