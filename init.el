@@ -100,6 +100,12 @@
   (company-tooltip-flip-when-above)
   (company-tooltip-limit 10))
 
+(use-package company-jedi
+  :ensure t
+  :config
+  (add-hook 'python-mode-hook (lambda()
+				(add-to-list 'company-backends 'company-jedi))))
+
 (use-package counsel
   :ensure t
   :bind (([remap execute-extended-command] . counsel-M-x)
