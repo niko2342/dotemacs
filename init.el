@@ -141,6 +141,10 @@
   (auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
   (backup-directory-alist `((".*" . ,temporary-file-directory))))
 
+(use-package flycheck
+  :ensure t
+  :hook (prog-mode . flycheck-mode))
+
 (use-package frame
   :config
   (set-frame-font "FuraCode Nerd Font 14")
