@@ -195,6 +195,10 @@
   (set-terminal-coding-system 'utf-8)
   (set-keyboard-coding-system 'utf-8))
 
+(use-package mustache-mode
+  :ensure t
+  :mode ("\\.mustache\\'" . mustache-mode))
+
 (use-package newcomment
   :bind (([remap comment-dwim] . comment-line)))
 
