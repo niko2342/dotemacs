@@ -147,7 +147,9 @@
 
 (use-package frame
   :config
-  (set-frame-font "FuraCode Nerd Font 14")
+  (if (string-equal (system-name) "L-WS-40009-VM")
+      (set-frame-font "FuraCode Nerd Font 10")
+    (set-frame-font "FuraCode Nerd Font 14"))
   ;; Disable blinking cursor.
   (blink-cursor-mode -1))
 
