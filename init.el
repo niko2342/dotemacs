@@ -190,6 +190,15 @@
           #'magit-display-buffer-fullframe-status-v1))
   (setq transient-default-level 5))
 
+(use-package markdown-mode
+  :ensure t
+  :commands (markdown-mode gfm-mode)
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+  :custom
+  (markdown-command "multimarkdown"))
+
 (use-package mule
   :config
   (prefer-coding-system 'utf-8)
