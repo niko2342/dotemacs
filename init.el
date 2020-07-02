@@ -153,6 +153,20 @@
   ;; Disable blinking cursor.
   (blink-cursor-mode -1))
 
+(use-package haskell-mode
+  :ensure t
+  :bind (:map haskell-mode-map
+              ("M-g i" . haskell-navigate-imports))
+  :init
+  (add-hook 'haskell-mode-hook
+            (lambda ()
+              (set (make-local-variable 'company-backends)
+                   (append '((company-capf company-dabbrev-code))
+                           company-backends))))
+  :custom
+  (haskell-compile-cabal-build-command "stack build")
+  (haskell-stylish-on-save t))
+
 (use-package hippie-exp
   ;; "Hippie" expansion provides a variety of completions and expansions.
   :bind (("M-/" . hippie-expand))
@@ -284,4 +298,4 @@
   :ensure t)
 
 (provide 'init)
-;; init.el ends here
+;;; init.el ends here
