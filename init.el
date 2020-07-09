@@ -289,6 +289,10 @@
 (use-package subword
   :hook ((prog-mode . subword-mode)))
 
+(use-package yaml-mode
+  :ensure t
+  :mode ("\\.yml$" . yaml-mode))
+
 (use-package yasnippet
   :ensure t
   :config
