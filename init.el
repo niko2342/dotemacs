@@ -266,6 +266,11 @@
 	projectile-completion-system 'ivy)
   (projectile-mode 1))
 
+(use-package python
+  :custom
+  (python-shell-interpreter-args "-m IPython --simple-prompt -i")
+  (python-shell-interpreter "python3"))
+
 (use-package python-black
   :ensure t
   :demand t
@@ -317,6 +322,10 @@
 
 (use-package subword
   :hook ((prog-mode . subword-mode)))
+
+(use-package yaml-mode
+  :ensure t
+  :mode ("\\.yml$" . yaml-mode))
 
 (use-package yaml-mode
   :ensure t
