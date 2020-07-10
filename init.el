@@ -100,6 +100,18 @@
   (company-tooltip-flip-when-above)
   (company-tooltip-limit 10))
 
+(use-package company-ghc
+  :ensure t
+  :defer t
+  :after company)
+
+(use-package company-ghci
+  :ensure t
+  :defer t
+  :after company
+  :config
+  (push 'company-ghci company-backends))
+
 (use-package company-jedi
   :ensure t
   :config
@@ -145,6 +157,12 @@
   :ensure t
   :hook (prog-mode . flycheck-mode))
 
+(use-package format-all
+  :ensure t
+  :disable t
+  :bind ("C-c C-f" . format-all-buffer)
+  :hook (haskell-mode . format-all-mode))
+
 (use-package frame
   :config
   (if (string-equal (system-name) "L-WS-40009-VM")
@@ -156,8 +174,10 @@
 (use-package haskell-mode
   :ensure t
   :bind (:map haskell-mode-map
+              ("C-c C-c" . haskell-compile)
               ("M-g i" . haskell-navigate-imports))
   :init
+  (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
   (add-hook 'haskell-mode-hook
             (lambda ()
               (set (make-local-variable 'company-backends)
@@ -165,7 +185,16 @@
                            company-backends))))
   :custom
   (haskell-compile-cabal-build-command "stack build")
-  (haskell-stylish-on-save t))
+  (haskell-interactive-popup-errors nil)
+  (haskell-stylish-on-save t)
+  (haskell-tags-on-save t))
+
+
+(use-package hindent
+  :ensure t
+  :defer t
+  :init
+  (add-hook 'haskell-mode-hook #'hindent-mode))
 
 (use-package hippie-exp
   ;; "Hippie" expansion provides a variety of completions and expansions.
