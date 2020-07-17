@@ -159,7 +159,7 @@
 
 (use-package format-all
   :ensure t
-  :disable t
+  :disabled t
   :bind ("C-c C-f" . format-all-buffer)
   :hook (haskell-mode . format-all-mode))
 
