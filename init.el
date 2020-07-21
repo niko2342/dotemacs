@@ -146,6 +146,10 @@
 (use-package diminish
   :ensure t)
 
+(use-package dired
+  :custom
+  (dired-listing-switches "-lXGh --group-directories-first"))
+
 (use-package files
   :custom
   (require-final-newline t "add newline at end of file")
