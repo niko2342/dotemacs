@@ -315,6 +315,16 @@
   :config
   (savehist-mode +1))
 
+(use-package shackle
+  :ensure t
+  :custom
+  (shackle-rules
+   '((compilation-mode :popup t :select t :align 'below :size 0.22)
+     ("*compilation*" :popup t :select t :align 'below :size 0.22)
+     (t :select t)))
+  :config
+  (shackle-mode t))
+
 (use-package simple
   :config
   ;; Display line number in mode line.
