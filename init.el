@@ -186,6 +186,8 @@
               ("M-g i" . haskell-navigate-imports))
   :init
   (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+  (add-hook 'haskell-mode-hook 'haskell-auto-insert-module-template)
+  (add-hook 'haskell-mode-hook 'haskell-decl-scan-mode)
   (add-hook 'haskell-mode-hook
             (lambda ()
               (set (make-local-variable 'company-backends)
@@ -200,6 +202,7 @@
 
 (use-package hindent
   :ensure t
+  :disabled t
   :defer t
   :init
   (add-hook 'haskell-mode-hook #'hindent-mode))
