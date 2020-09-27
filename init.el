@@ -128,7 +128,8 @@
 	 ([remap find-file] . counsel-find-file)
 	 ([remap yank-pop] . counsel-yank-pop)
 	 ([remap describe-function] . counsel-describe-function)
-	 ([remap describe-variable] . counsel-describe-variable)))
+	 ([remap describe-variable] . counsel-describe-variable)
+         ("C-c i" . counsel-semantic-or-imenu)))
 
 (use-package counsel-projectile
   :ensure t
