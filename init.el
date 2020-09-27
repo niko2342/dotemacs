@@ -280,7 +280,12 @@
 (use-package python
   :custom
   (python-shell-interpreter-args "-m IPython --simple-prompt -i")
-  (python-shell-interpreter "python3"))
+  (python-shell-interpreter "python3")
+  :config
+  (add-hook 'python-mode-hook
+            (lambda()
+              (setq imenu-create-index-function
+                    #'python-imenu-create-flat-index))))
 
 (use-package python-black
   :ensure t
