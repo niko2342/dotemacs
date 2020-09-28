@@ -133,7 +133,9 @@
 
 (use-package counsel-projectile
   :ensure t
-  :after projectile)
+  :after projectile
+  :config
+  (counsel-projectile-mode 1))
 
 (use-package custom
   :config
