@@ -157,6 +157,9 @@
   :custom
   (dired-listing-switches "-lXGh --group-directories-first"))
 
+(use-package eldoc
+  :diminish)
+
 (use-package files
   :custom
   (require-final-newline t "add newline at end of file")
