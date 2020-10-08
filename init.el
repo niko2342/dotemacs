@@ -384,6 +384,7 @@
 
 (use-package yasnippet
   :ensure t
+  :diminish
   :config
   (yas-global-mode 1))
 
