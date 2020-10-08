@@ -305,6 +305,14 @@
   :defer
   :hook (before-save . py-isort-before-save))
 
+(use-package racer
+  :ensure t
+  :after rust-mode
+  :diminish
+  :config
+  (add-hook 'racer-mode-hook #'eldoc-mode)
+  (add-hook 'rust-mode-hook #'racer-mode))
+
 (use-package recentf
   :custom
   (recentf-save-file (expand-file-name "recentf" user-emacs-directory))
@@ -313,6 +321,11 @@
   (recentf-max-menu-items 15)
   :config
   (recentf-mode +1))
+
+(use-package rust-mode
+  :ensure t
+  :custom
+  (rust-format-on-save t))
 
 (use-package saveplace
   :custom
