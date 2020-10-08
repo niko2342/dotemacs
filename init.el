@@ -368,6 +368,12 @@
 (use-package subword
   :hook ((prog-mode . subword-mode)))
 
+(use-package undo-tree
+  :ensure t
+  :diminish
+  :init
+  (global-undo-tree-mode))
+
 (use-package yaml-mode
   :ensure t
   :mode ("\\.yml$" . yaml-mode))
