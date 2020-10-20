@@ -346,8 +346,8 @@
   :ensure t
   :custom
   (shackle-rules
-   '((compilation-mode :popup t :select t :align 'below :size 0.22)
-     ("*compilation*" :popup t :select t :align 'below :size 0.22)
+   '((compilation-mode :popup t :select t :align 'right :size 0.5)
+     ("*compilation*" :popup t :select t :align 'right :size 0.5)
      (t :select t)))
   :config
   (shackle-mode t))
