@@ -76,6 +76,10 @@
 (require 'use-package)
 (setq use-package-verbose t)
 
+(use-package browse-url
+  :custom
+  (browse-url-browser-function 'browse-url-firefox))
+
 (use-package autorevert
   :config
   (global-auto-revert-mode t))
