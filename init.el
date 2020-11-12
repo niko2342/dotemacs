@@ -360,6 +360,10 @@
   :config
   (shackle-mode t))
 
+(use-package shfmt
+  :ensure t
+  :hook (sh-mode . shfmt-on-save-mode))
+
 (use-package simple
   :config
   ;; Display line number in mode line.
