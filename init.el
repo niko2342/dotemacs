@@ -390,10 +390,6 @@
   :ensure t
   :mode ("\\.yml$" . yaml-mode))
 
-(use-package yaml-mode
-  :ensure t
-  :mode ("\\.yml$" . yaml-mode))
-
 (use-package yasnippet
   :ensure t
   :diminish
